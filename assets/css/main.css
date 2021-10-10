@@ -16,7 +16,7 @@
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 20px;
+  padding-top: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-bottom: 20px;
 }
@@ -71,7 +71,7 @@
   font-size: 13px;
 }
 
-section > h1 {
+section:first-of-type > h1 {
   text-align: center;
   text-transform: capitalize;
   color: #444444;
@@ -79,7 +79,7 @@ section > h1 {
   font-size: 38px;
 }
 
-section > div:first-of-type {
+section:first-of-type > div:first-of-type {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,11 +94,11 @@ section > div:first-of-type {
   margin-top: 20px;
 }
 
-section > div:first-of-type i {
+section:first-of-type > div:first-of-type i {
   color: #eb5f60;
 }
 
-section > div:first-of-type span {
+section:first-of-type > div:first-of-type span {
   width: 5px;
   height: 5px;
   border: 1px solid #eb5f60;
@@ -106,27 +106,27 @@ section > div:first-of-type span {
   margin: 4px 15px 4px;
 }
 
-section > div:first-of-type span:first-of-type:before {
+section:first-of-type > div:first-of-type span:first-of-type:before {
   content: "";
   width: 40px;
   height: 1px;
   background: #eb5f60;
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 100%;
 }
 
-section > div:first-of-type span:last-of-type:before {
+section:first-of-type > div:first-of-type span:last-of-type:before {
   content: "";
   width: 40px;
   height: 1px;
   background: #eb5f60;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 100%;
 }
 
-section .container > div:first-of-type {
+.container > div:first-of-type {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,12 +146,12 @@ section .container > div:first-of-type {
   transition: box-shadow 250ms, -webkit-box-shadow 250ms;
 }
 
-section .container > div:first-of-type .book_box {
+.container > div:first-of-type .book_box {
   gap: 20px;
   margin: 10px;
 }
 
-section .container > div:first-of-type .book_box > div {
+.container > div:first-of-type .book_box > div {
   border: 1px solid #ebebeb;
   padding: 30px;
   display: -webkit-box;
@@ -166,17 +166,79 @@ section .container > div:first-of-type .book_box > div {
           align-items: center;
 }
 
-section .container > div:first-of-type .book_box > div > img {
+.container > div:first-of-type .book_box > div > img {
   width: 268px;
   height: 400px;
   margin-bottom: 20px;
 }
 
-section .container > div:first-of-type .book_box:hover {
+.container > div:first-of-type .book_box:hover {
   border: 1px solid #eb5f60;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
+}
+
+#modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#modal .form-container {
+  background-color: #f8fafd;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  padding: 20px;
+  position: relative;
+}
+
+#modal .form-container h1 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 5px;
+}
+
+#modal .form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 460px;
+  height: auto;
+}
+
+#modal .form-container form label {
+  font-size: 20px;
+  display: block;
+}
+
+#modal .form-container form input {
+  outline: none;
+  border: 1px solid #eb5f60;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+  height: 25px;
 }
 /*# sourceMappingURL=main.css.map */

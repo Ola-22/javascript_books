@@ -22,8 +22,12 @@ let books = [
 ]
 
 const BookMain = document.getElementById("books_main"),
-  container = document.getElementById("container");
-const newArray = books.map(function (value) {
+  AddBook = document.getElementById("add-book"),
+  FormBook = document.getElementById("form-book"),
+  modal = document.getElementById("modal");
+
+
+const newArray = books.map((value) => {
   const booksMain = document.createElement("div");
   BookMain.appendChild(booksMain);
   booksMain.classList.add("book_box");
@@ -39,3 +43,7 @@ const newArray = books.map(function (value) {
 })
 console.log(newArray)
 
+
+AddBook.addEventListener("click", () => {
+  modal.style.display = "flex";
+})
