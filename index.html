@@ -16,7 +16,7 @@
     <div>
       <img src="assets/images/BookShelter.png" alt="" />
     </div>
-    <div>
+    <div id="search">
       <img src="assets/images/Search.png" alt="" />
       <input type="text" placeholder="Search books" />
     </div>
@@ -24,19 +24,52 @@
       <img src="assets/images/Sun.png" alt="" />
     </div>
   </header>
-  <section>
-    <div>
-      <span>
+  <main>
+    <section>
+      <div class="book-icon">
+        <span>
 
-      </span>
-      <i class="fa fa-book"></i>
-      <span></span>
+        </span>
+        <i class="fa fa-book"></i>
+        <span></span>
+      </div>
+      <h1>best books</h1>
+      <div class="container">
+        <div id="books_main"></div>
+      </div>
+    </section>
+    <section>
+      <button id="add-book">Add Book</button>
+    </section>
+
+  </main>
+
+  <div id="modal">
+    <div class="form-container">
+      <div class="form-body">
+        <form id="form-book">
+          <div style="text-align: center;">
+            <i style="color: #eb5f60;" class="fa fa-book"></i>
+          </div>
+          <div id="header-form">
+            <h1>Add Book</h1>
+          </div>
+          <div>
+            <label>Title</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>Author</label>
+            <input type="text" />
+          </div>
+      </div>
+
+
+      </form>
     </div>
-    <h1>best books</h1>
-    <div class="container">
-      <div id="books_main"></div>
-    </div>
-  </section>
+
+  </div>
+
 
 
 
