@@ -201,17 +201,21 @@ section:first-of-type > div:first-of-type span:last-of-type:before {
 }
 
 #modal .form-container {
-  background-color: #f8fafd;
+  background-color: #eb5f60;
   width: 100%;
   max-width: 500px;
-  height: 300px;
+  height: 350px;
   padding: 20px;
   position: relative;
+  border-radius: 15px;
 }
 
 #modal .form-container h1 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-bottom: 5px;
+  text-align: center;
+  color: white;
+  margin-top: 5px;
 }
 
 #modal .form-container form {
@@ -231,6 +235,8 @@ section:first-of-type > div:first-of-type span:last-of-type:before {
 #modal .form-container form label {
   font-size: 20px;
   display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 #modal .form-container form input {
@@ -240,5 +246,37 @@ section:first-of-type > div:first-of-type span:last-of-type:before {
   width: 100%;
   max-width: 400px;
   height: 25px;
+}
+
+#modal .form-container form > div:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#modal .form-container form > div:last-of-type button {
+  width: 100px;
+  height: 30px;
+  border: 1px solid transparent;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#modal .form-container form > div:last-of-type button:hover {
+  background-color: #eb5f60;
+  border: 1px solid #f8fafd;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 /*# sourceMappingURL=main.css.map */
