@@ -16,10 +16,10 @@
     <div>
       <img src="assets/images/BookShelter.png" alt="" />
     </div>
-    <div id="search">
+    <form id="search">
       <img src="assets/images/Search.png" alt="" />
-      <input type="text" placeholder="Search books" />
-    </div>
+      <input id="search-input" type="text" placeholder="Search books" />
+    </form>
     <div>
       <img src="assets/images/Sun.png" alt="" />
     </div>
@@ -27,9 +27,7 @@
   <main>
     <section>
       <div class="book-icon">
-        <span>
-
-        </span>
+        <span></span>
         <i class="fa fa-book"></i>
         <span></span>
       </div>
@@ -55,24 +53,24 @@
             <h1>Add Book</h1>
           </div>
           <div>
-            <label>Title</label>
-            <input type="text" />
+            <label for="title-form">Title</label>
+            <input id="title-form" name="title" type="text" placeholder="Title of the book..." />
           </div>
           <div>
-            <label>Author</label>
-            <input type="text" />
+            <label for="author">Author</label>
+            <input id="author" name="author" type="text" placeholder="Author of the book..." />
           </div>
           <div>
-            <label>Choose Image</label>
-            <span class="file">
-              <input type="file" />
-              <span class="file-custom"></span>
-            </span>
+            <label for="form-file">Choose Image</label>
+            <input name="form-file" type="file" id="file-input" />
+            <label for="file-input">
+              Choose a file...
+            </label>
 
           </div>
           <div>
-            <button>Add</button>
-            <button>Cancel</button>
+            <input type="submit" id="add-list" value="Add" />
+            <input type="submit" value="Cancel" />
           </div>
       </div>
 
