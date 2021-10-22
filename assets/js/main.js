@@ -1,31 +1,37 @@
 const BookMain = document.getElementById("books_main"),
   AddBook = document.getElementById("add-book"),
   modal = document.getElementById("modal"),
-  search = document.getElementById("search-input"),
   searchForm = document.getElementById("search"),
   title = document.getElementById("title-form"),
   author = document.getElementById("author"),
   FileInput = document.getElementById("file-input"),
-  formBook = document.getElementById("form-book");
+  formBook = document.getElementById("form-book"),
+  closeForm = document.getElementById("cancel"),
+  remove = document.getElementById('remove');
+
 
 
 const books = [
   {
+    id: 1,
     title: "The Fallen",
     author: "David Baldacci",
     image: "https://img.youm7.com/ArticleImgs/2018/8/10/107739-%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D8%A7%D9%82%D8%B7.jpg"
   },
   {
+    id: 2,
     title: "17th Suspect",
     author: "James Paterson",
     image: "https://img.youm7.com/ArticleImgs/2018/8/10/36702-%D8%A7%D9%84%D9%85%D8%B4%D8%A8%D9%88%D9%87-%D8%A7%D9%84%D9%8017.jpg"
   },
   {
+    id: 3,
     title: "The President Is Missing",
     author: "Bill Clinton",
     image: "https://img.youm7.com/ArticleImgs/2018/8/10/77166-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%85%D9%81%D9%82%D9%88%D8%AF.jpg"
   },
   {
+    id: 4,
     title: "The Cast",
     author: "Danielle steel",
     image: "https://img.youm7.com/ArticleImgs/2018/8/10/50638-%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D9%81%D8%B1%D9%8A%D9%82-%D8%A7%D9%84%D8%AA%D9%85%D8%AB%D9%8A%D9%84.jpg"
@@ -33,8 +39,7 @@ const books = [
 ]
 
 
-function newArray() {
-  BookMain.innerHTML = "";
+function newArray(books) {
 
   books.map((book) => {
     const booksMain = document.createElement("div");
@@ -49,29 +54,32 @@ function newArray() {
   `
   })
 }
+
+function addBooks() {
+  BookMain.innerHTML = "";
+
+  newArray(books);
+}
 console.log(newArray)
 
-searchForm.addEventListener("keyup", function (e) {
+
+searchForm.addEventListener("keyup", e => {
   e.preventDefault();
 
   const searchBar = e.target.value;
-  console.log(searchBar)
-  const filterBook = books.filter(book => {
-    return book.title.includes(searchBar)
-  })
-  newArray(filterBook)
-  console.log(filterBook)
-  console.log("new", newArray(filterBook))
-})
+  let filterd = books.filter(book => book.title.includes(searchBar));
+  if (filterd) BookMain.innerHTML = "";
 
-window.onload = newArray();
+  newArray(filterd);
+});
+
+window.addEventListener("load", addBooks)
 
 
 
 AddBook.addEventListener("click", () => {
   modal.style.display = "flex";
 })
-
 
 
 formBook.addEventListener("submit", (e) => {
@@ -86,7 +94,7 @@ formBook.addEventListener("submit", (e) => {
       author: author.value,
       image: reader.result
     });
-    newArray();
+    addBooks();
 
     modal.style.display = "none";
     title.value = "";
@@ -95,5 +103,6 @@ formBook.addEventListener("submit", (e) => {
   };
 });
 
-
-
+closeForm.addEventListener("click", () => {
+  modal.style.display = "none"
+})
