@@ -7,9 +7,8 @@ const BookMain = document.getElementById("books_main"),
   FileInput = document.getElementById("file-input"),
   formBook = document.getElementById("form-book"),
   closeForm = document.getElementById("cancel"),
-  remove = document.getElementById('remove');
-
-
+  darkMode = document.getElementById("dark"),
+  whiteMode = document.getElementById("sun");
 
 const books = [
   {
@@ -105,4 +104,21 @@ formBook.addEventListener("submit", (e) => {
 
 closeForm.addEventListener("click", () => {
   modal.style.display = "none"
+})
+
+
+darkMode.addEventListener("click", () => {
+  var el = document.body;
+  el.classList.toggle("dark-mode");
+  darkMode.style.display = "none"
+  whiteMode.style.display = "flex"
+})
+
+
+whiteMode.addEventListener("click", () => {
+  var el = document.body;
+  el.classList.remove("dark-mode");
+  darkMode.style.display = "flex"
+  whiteMode.style.display = "none"
+
 })
